@@ -1,3 +1,41 @@
+/* Navbar Styling */
+nav {
+  background-color: var(--accent-bg);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--accent-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: var(--accent-border);
+  color: var(--text-h);
+  transform: translateY(-2px);
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -7,6 +45,8 @@
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
+
+  
 
   &:hover {
     border-color: var(--accent-border);
