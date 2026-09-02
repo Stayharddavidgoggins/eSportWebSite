@@ -4,24 +4,69 @@ import HomePage from './pages/HomePage'
 import Schedule from './components/schedule'
 import About from './components/about'
 import Contact from './components/contact'
+import Welcome from './components/Welcome'
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/schedule">Schedule</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </nav>
-      
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/home" element={
+          <>
+            <nav>
+              <div className="logo">R</div>
+              <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/schedule">Schedule</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            </nav>
+            <HomePage />
+          </>
+        } />
+        <Route path="/schedule" element={
+          <>
+            <nav>
+              <div className="logo">R</div>
+              <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/schedule">Schedule</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            </nav>
+            <Schedule />
+          </>
+        } />
+        <Route path="/about" element={
+          <>
+            <nav>
+              <div className="logo">R</div>
+              <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/schedule">Schedule</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            </nav>
+            <About />
+          </>
+        } />
+        <Route path="/contact" element={
+          <>
+            <nav>
+              <div className="logo">R</div>
+              <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/schedule">Schedule</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            </nav>
+            <Contact />
+          </>
+        } />
       </Routes>
     </Router>
   )
