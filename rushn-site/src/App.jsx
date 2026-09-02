@@ -5,6 +5,7 @@ import Schedule from './components/schedule'
 import About from './components/about'
 import Contact from './components/contact'
 import Welcome from './components/Welcome'
+import Socials from './components/socials'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <li><Link to="/schedule">Schedule</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/socials">Socials</Link></li>
               </ul>
             </nav>
             <HomePage />
@@ -34,6 +36,7 @@ function App() {
                 <li><Link to="/schedule">Schedule</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/socials">Socials</Link></li>
               </ul>
             </nav>
             <Schedule />
@@ -48,6 +51,7 @@ function App() {
                 <li><Link to="/schedule">Schedule</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/socials">Socials</Link></li>
               </ul>
             </nav>
             <About />
@@ -62,9 +66,25 @@ function App() {
                 <li><Link to="/schedule">Schedule</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/socials">Socials</Link></li>
               </ul>
             </nav>
             <Contact />
+          </>
+        } />
+        <Route path="/socials" element={
+          <>
+            <nav>
+              <div className="logo">R</div>
+              <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/schedule">Schedule</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/socials">Socials</Link></li>
+              </ul>
+            </nav>
+            <Socials />
           </>
         } />
       </Routes>
