@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import './App.css'
 import HomePage from './pages/HomePage'
 import Schedule from './components/schedule'
@@ -6,86 +7,48 @@ import About from './components/about'
 import Contact from './components/contact'
 import Welcome from './components/Welcome'
 import Socials from './components/socials'
+import MovibeNavigation from './components/MobileNavigation'
+import DeskTopNavigation from './components/DeskTopnavigation'
+
+function PageLayout({ children, isMobile }) {
+  return (
+    <>
+      {isMobile ? <MovibeNavigation /> : <DeskTopNavigation />}
+      {children}
+    </>
+  )
+}
 
 function App() {
+  const isMobile = useMediaQuery('(max-width: 899px)');
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={
-          <>
-            <nav>
-              <div className="logo">R</div>
-              <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/schedule">Schedule</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/socials">Socials</Link></li>
-              </ul>
-            </nav>
+          <PageLayout isMobile={isMobile}>
             <HomePage />
-          </>
+          </PageLayout>
         } />
         <Route path="/schedule" element={
-          <>
-            <nav>
-              <div className="logo">R</div>
-              <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/schedule">Schedule</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/socials">Socials</Link></li>
-              </ul>
-            </nav>
+          <PageLayout isMobile={isMobile}>
             <Schedule />
-          </>
+          </PageLayout>
         } />
         <Route path="/about" element={
-          <>
-            <nav>
-              <div className="logo">R</div>
-              <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/schedule">Schedule</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/socials">Socials</Link></li>
-              </ul>
-            </nav>
+          <PageLayout isMobile={isMobile}>
             <About />
-          </>
+          </PageLayout>
         } />
         <Route path="/contact" element={
-          <>
-            <nav>
-              <div className="logo">R</div>
-              <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/schedule">Schedule</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/socials">Socials</Link></li>
-              </ul>
-            </nav>
+          <PageLayout isMobile={isMobile}>
             <Contact />
-          </>
+          </PageLayout>
         } />
         <Route path="/socials" element={
-          <>
-            <nav>
-              <div className="logo">R</div>
-              <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/schedule">Schedule</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/socials">Socials</Link></li>
-              </ul>
-            </nav>
+          <PageLayout isMobile={isMobile}>
             <Socials />
-          </>
+          </PageLayout>
         } />
       </Routes>
     </Router>

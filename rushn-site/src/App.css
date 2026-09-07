@@ -23,7 +23,7 @@ nav {
   justify-content: center;
   font-family: 'Lobster', cursive;
   font-size: 22px;
-  color: #ffffff;
+  color: #f50d9c;
   box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3), 0 3px 8px rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 2rem;
@@ -56,6 +56,322 @@ nav a:hover {
   background-color: var(--accent-border);
   color: var(--text-h);
   transform: translateY(-2px);
+}
+
+.mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  #root {
+    padding-bottom: 80px;
+  }
+
+  .mobile-navigation {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    min-height: 64px;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-navigation {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mobile-navigation-link,
+  .mobile-menu-toggle,
+  .mobile-page-menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-h);
+    font: inherit;
+    text-decoration: none;
+  }
+
+  .mobile-navigation-link,
+  .mobile-menu-toggle {
+    min-width: 52px;
+    min-height: 48px;
+    flex-direction: column;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0;
+    transform: translateY(12px);
+  }
+
+  .mobile-navigation-link svg,
+  .mobile-menu-toggle svg {
+    font-size: 30px;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 2;
+    justify-self: end;
+  }
+
+  .mobile-navigation.menu-open .mobile-menu-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    transform: none;
+  }
+
+  .mobile-navigation-link:first-child {
+    justify-self: start;
+  }
+
+  .mobile-navigation-link:nth-child(2) {
+    justify-self: center;
+  }
+
+  .mobile-page-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 12px;
+    padding: 32px 20px calc(96px + env(safe-area-inset-bottom));
+    background: var(--bg);
+  }
+
+  .mobile-page-menu a {
+    min-height: 72px;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    transform: translateY(56px);
+  }
+
+  .mobile-page-menu a svg {
+    font-size: 28px;
+  }
+
+  .mobile-page-menu a:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-page-menu a:hover,
+  .mobile-page-menu a.active {
+    color: var(--accent);
+    background: var(--accent-bg);
+  }
+}
+
+.schedule-section {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+  padding: 24px 0 72px;
+}
+
+.schedule-header {
+  max-width: 650px;
+  margin: 0 auto 42px;
+}
+
+.schedule-header h1 {
+  margin: 8px 0 14px;
+}
+
+.schedule-kicker,
+.schedule-type {
+  color: var(--about-accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+
+.schedule-card {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid var(--about-border);
+  border-left: 5px solid var(--about-accent);
+  border-radius: 8px;
+  background: var(--about-card);
+  box-shadow: var(--about-shadow);
+}
+
+.schedule-recovery {
+  border-color: var(--border);
+  border-left-color: var(--accent);
+  background: var(--social-bg);
+}
+
+.schedule-card-topline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.schedule-day {
+  color: var(--text-h);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.schedule-recovery .schedule-type {
+  color: var(--accent);
+}
+
+.schedule-card h2 {
+  margin-bottom: 8px;
+}
+
+.schedule-card p {
+  color: var(--text);
+}
+
+.schedule-note {
+  margin: 28px auto 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.about-section {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+  padding: 24px 0 72px;
+}
+
+.about-section h1 {
+  margin-bottom: 42px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.about-card {
+  position: relative;
+  min-height: 230px;
+  padding: 28px;
+  border: 1px solid var(--about-border);
+  border-radius: 10px;
+  background: var(--about-card);
+  box-shadow: var(--about-shadow);
+  overflow: hidden;
+}
+
+.about-card::after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right: -34px;
+  bottom: -34px;
+  border: 1px solid var(--about-accent);
+  border-radius: 50%;
+}
+
+.about-card-intro {
+  grid-column: auto;
+}
+
+.about-card-esports {
+  grid-column: auto;
+}
+
+.about-card-achievements {
+  grid-column: auto;
+}
+
+.about-card-community {
+  grid-column: auto;
+}
+
+.about-label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--about-accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-card h2 {
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  max-width: 44ch;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .schedule-section {
+    width: min(100% - 32px, 540px);
+    padding: 12px 0 48px;
+  }
+
+  .schedule-header {
+    margin-bottom: 28px;
+  }
+
+  .schedule-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .schedule-card {
+    min-height: auto;
+  }
+
+  .about-section {
+    width: min(100% - 32px, 540px);
+    padding: 12px 0 48px;
+  }
+
+  .about-section h1 {
+    margin-bottom: 28px;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-card,
+  .about-card-intro,
+  .about-card-esports,
+  .about-card-achievements,
+  .about-card-community {
+    min-height: auto;
+    transform: none;
+  }
 }
 
 .counter {

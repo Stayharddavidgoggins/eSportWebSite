@@ -1,15 +1,47 @@
 export default function About() {
   return (
-    <section id="about">
+    <section id="about" className="about-section">
       <h1>About Me</h1>
-      <p>
-        I am Leevi"Rushn"Kotkavalkama,I am a 17yr old who is trying to go pro in
-        esports. I have 4+ years of experience in competitive gaming and have
-        played in multiple tournaments. I also study to become a software
-        developer and have done it now for a bit over 1 year. Fun fact: This
-        website was made as a school project i wanted to do! i have also managed to become a 2time finnish champion in floorball being crowned as 2x best defence man, also in points,goals and assists. so alot of achievements done in life!
-        Also i do have a community i am trying to build with streaming and content creation, where i do daily playing with viewers and when we get enough ppl in the community i will do giveaways and much more fun! so if you want to join my community please contact me on discord or email me!
-      </p>
+      <div className="about-grid">
+        <article className="about-card about-card-intro">
+          <span className="about-label">01 / The player</span>
+          <h2>Meet Rushn</h2>
+          <p>
+            I am Leevi “Rushn” Kotkavalkama, a 17-year-old player working
+            toward going pro in esports.
+          </p>
+        </article>
+
+        <article className="about-card about-card-esports">
+          <span className="about-label">02 / Competition</span>
+          <h2>Built for the grind</h2>
+          <p>
+            I have over four years of experience in competitive gaming and
+            have competed in multiple tournaments, including the 2025 ELC and
+            Fire Challenger series.
+          </p>
+        </article>
+
+        <article className="about-card about-card-achievements">
+          <span className="about-label">03 / Beyond esports</span>
+          <h2>More than one arena</h2>
+          <p>
+            I am also a software development student. In floorball, I have
+            become a two-time Finnish champion and earned two best defender
+            titles, along with recognition for points, goals, and assists.
+          </p>
+        </article>
+
+        <article className="about-card about-card-community">
+          <span className="about-label">04 / The community</span>
+          <h2>Play together</h2>
+          <p>
+            Through streaming and content creation, I am building a community
+            where I play with viewers daily. Join in through Discord or email
+            me to be part of what comes next.
+          </p>
+        </article>
+      </div>
     </section>
   );
 }

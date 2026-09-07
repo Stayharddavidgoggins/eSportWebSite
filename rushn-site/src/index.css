@@ -8,6 +8,10 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
+  --about-card: #fffdf8;
+  --about-border: rgba(212, 175, 55, 0.45);
+  --about-accent: #9a7410;
+  --about-shadow: 0 12px 30px rgba(80, 60, 10, 0.09);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -41,6 +45,10 @@
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
+    --about-card: #222329;
+    --about-border: rgba(212, 175, 55, 0.55);
+    --about-accent: #e4c15c;
+    --about-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -55,7 +63,7 @@ body {
 }
 
 #root {
-  width: 1126px;
+  /* width: 1126px; */
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
