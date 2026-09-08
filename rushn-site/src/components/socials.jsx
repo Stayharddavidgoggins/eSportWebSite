@@ -1,6 +1,7 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import roseImage from '../assets/rose.png';
 
 function TikTokIcon() {
   const mark = 'M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2-2.74v-3.5a6.34 6.34 0 1 0 5.45 6.28V8.41a8.16 8.16 0 0 0 4.77 1.52V6.69z';
@@ -32,6 +33,10 @@ const socialLinks = [
 export default function Socials() {
   return (
     <section className="socials-section">
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-left" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-left" />
       <div className="socials-header">
         <span className="socials-kicker">Find me online</span>
         <h1>Socials</h1>

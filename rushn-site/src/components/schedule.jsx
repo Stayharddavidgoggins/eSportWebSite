@@ -1,3 +1,5 @@
+import roseImage from '../assets/rose.png';
+
 export default function Schedule() {
   const schedule = [
     {
@@ -53,6 +55,10 @@ export default function Schedule() {
 
   return (
     <section id="schedule" className="schedule-section">
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-left" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-left" />
       <div className="schedule-header">
         <p className="schedule-kicker">Weekly rhythm</p>
         <h1>Schedule</h1>

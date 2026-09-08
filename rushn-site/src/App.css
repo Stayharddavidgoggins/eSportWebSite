@@ -105,9 +105,49 @@ nav a.logo-link .logo {
     box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
   }
 
+  #root:has(.schedule-section) .mobile-navigation,
+  #root:has(.socials-section) .mobile-navigation {
+    background: rgba(11, 12, 16, 0.98);
+    border-top-color: rgba(231, 161, 180, 0.45);
+  }
+
+  #root:has(.schedule-section) .mobile-navigation-link,
+  #root:has(.schedule-section) .mobile-menu-toggle,
+  #root:has(.socials-section) .mobile-navigation-link,
+  #root:has(.socials-section) .mobile-menu-toggle {
+    color: #ffffff;
+  }
+
   .mobile-navigation {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mobile-logo-link {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1001;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .mobile-logo-link .logo {
+    position: static;
+  }
+
+  .mobile-logo-link:hover {
+    background: transparent;
+    transform: none;
+  }
+
+  .mobile-navigation.menu-open .mobile-logo-link {
+    display: none;
   }
 
   .mobile-navigation-link,
@@ -203,7 +243,9 @@ nav a.logo-link .logo {
   position: relative;
   box-sizing: border-box;
   width: 100%;
+  min-height: calc(100svh - 82px);
   margin: 0;
+  overflow: hidden;
   padding: 24px max(24px, 8vw) 72px;
   background:
     linear-gradient(rgba(212, 175, 55, 0.2) 1px, transparent 1px),
@@ -314,15 +356,15 @@ nav a.logo-link .logo {
 }
 
 #home .home-cloud::before {
-  top: -18px;
-  left: 24%;
+  top: 22%;
+  left: -28px;
   width: 58px;
   height: 58px;
 }
 
 #home .home-cloud::after {
-  right: 18%;
-  bottom: -14px;
+  right: -24px;
+  bottom: 18%;
   width: 46px;
   height: 46px;
 }
@@ -353,6 +395,7 @@ nav a.logo-link .logo {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
+  overflow: hidden;
   padding: clamp(54px, 8vw, 96px) max(24px, 6vw) 72px;
   background:
     linear-gradient(rgba(10, 15, 22, 0.93), rgba(10, 15, 22, 0.97)),
@@ -924,6 +967,14 @@ nav a.logo-link .logo {
     linear-gradient(135deg, #0b0c10 0%, #17151b 50%, #0b0c10 100%);
 }
 
+.schedule-section,
+.contact-section,
+.socials-section {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(91, 67, 82, 0.28), transparent 42%),
+    linear-gradient(135deg, #0b0c10 0%, #17151b 50%, #0b0c10 100%);
+}
+
 .about-section h1 {
   position: relative;
   z-index: 1;
@@ -1100,8 +1151,9 @@ nav a.logo-link .logo {
   }
 
   .schedule-section {
-    width: min(100% - 32px, 540px);
-    padding: 12px 0 48px;
+    width: 100%;
+    min-height: calc(100svh - 80px);
+    padding: 12px 16px 48px;
   }
 
   .schedule-header {

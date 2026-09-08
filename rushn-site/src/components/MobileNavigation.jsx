@@ -24,6 +24,10 @@ export default function MobileNavigation() {
 
   return (
     <header className={`mobile-navigation${isOpen ? ' menu-open' : ''}`}>
+      <Link className="mobile-logo-link" to="/" aria-label="Rushn logo" onClick={closeMenu}>
+        <span className="logo" aria-hidden="true" />
+      </Link>
+
       <Link className="mobile-navigation-link" to="/home" onClick={closeMenu}>
         <HomeIcon aria-hidden="true" />
         <span>Home</span>

@@ -1,3 +1,5 @@
+import roseImage from '../assets/rose.png';
+
 function DiscordIcon() {
   return (
     <img src="https://cdn.simpleicons.org/discord/ffffff" alt="" />
@@ -16,6 +18,10 @@ export default function Contact() {
       id="contact"
       className="contact-section"
     >
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-left" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-left" />
       <div className="contact-monitor">
         <div className="contact-screen">
           <div className="contact-screen-bar" aria-hidden="true">
