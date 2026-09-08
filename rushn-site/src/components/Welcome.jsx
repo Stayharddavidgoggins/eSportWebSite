@@ -1,9 +1,9 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Welcome.css';
+import welcomeImage from '../assets/OIP (1).webp';
 
 function Welcome() {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleEnter = () => {
     navigate('/home');
@@ -11,16 +11,24 @@ function Welcome() {
 
   return (
     <div className="welcome-container">
+      <img
+        src={welcomeImage}
+        alt=""
+        aria-hidden="true"
+        className="welcome-background-image"
+      />
+      <header className="welcome-header">
+        <h1 className="welcome-title">Rushn</h1>
+      </header>
       <div className="welcome-sidebar welcome-sidebar-left">
         <div className="welcome-vertical-text">I was never meant to fit in</div>
       </div>
       <div className="welcome-content">
         <div className="welcome-left">
-          <h1 className="welcome-title">Rushn</h1>
-          <p className="welcome-subtitle">I was never meant to fit in</p>
-          <button className="welcome-button" onClick={handleEnter}>
-            Go to the website
-          </button>
+          <div className="welcome-project-note">
+            Just a reminder guys that this website is made as a school project
+            by a learning software engineer so it might not be perfect!
+          </div>
         </div>
         <div className="welcome-right">
           <div className="video-wrapper">
@@ -41,6 +49,12 @@ function Welcome() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="welcome-actions">
+        <div className="welcome-ready">Ready to go?</div>
+        <button className="welcome-button" onClick={handleEnter}>
+          Go to the website
+        </button>
       </div>
       <div className="welcome-sidebar welcome-sidebar-right">
         <div className="welcome-vertical-text">I was never meant to fit in</div>

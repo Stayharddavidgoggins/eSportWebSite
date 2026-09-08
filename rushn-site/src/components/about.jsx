@@ -1,6 +1,12 @@
+import roseImage from '../assets/rose.png';
+
 export default function About() {
   return (
     <section id="about" className="about-section">
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-top-left" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-right" />
+      <img src={roseImage} alt="" aria-hidden="true" className="about-corner about-corner-bottom-left" />
       <h1>About Me</h1>
       <div className="about-grid">
         <article className="about-card about-card-intro">
