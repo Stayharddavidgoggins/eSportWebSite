@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import './App.css'
-import HomePage from './pages/HomePage'
-import Schedule from './components/schedule'
-import About from './components/about'
-import Contact from './components/contact'
-import Welcome from './components/Welcome'
-import Socials from './components/socials'
-import MovibeNavigation from './components/MobileNavigation'
-import DeskTopNavigation from './components/DeskTopnavigation'
+import HomePage from '../src/pages/HomePage'
+import Schedule from '../src/components/schedule'
+import About from '../src/components/about'
+import Contact from '../src/components/contact'
+import Welcome from '../src/components/Welcome'
+import Socials from '../src/components/socials'
+import MovibeNavigation from '../src/components/MobileNavigation'
+import DeskTopNavigation from '../src/components/DesktopNavigation'
 
 function PageLayout({ children, isMobile }) {
   return (
